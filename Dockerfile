@@ -26,8 +26,8 @@ RUN apt-get update && apt-get install -y \
 # 3) install packages
 RUN pip install --no-cache-dir networkx scipy python-louvain
 
-RUN conda install --yes babypandas geopandas
-
+RUN conda install --yes geopandas
+RUN pip install --no-cache-dir babypandas
 # 4) change back to notebook user
 COPY /run_jupyter.sh /
 USER $NB_UID
